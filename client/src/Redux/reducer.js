@@ -2,11 +2,16 @@ import {ALL_COUNTRIES,
         GET_COUNTRY_ID ,
         GET_COUNTRY_NAME ,
         CREATE_ACTIVITY ,
-        CLEAR } from "./actions";
+        CLEAR, 
+        SORT,
+        SORT_POPULATION,
+        SORT_CONTINENT} from "./actions";
 
 const initialState = {
     countries: [],
     detail: [],
+    copyCountries: [],
+    
 }
 
 const rootReducer = (state = initialState,action) => {
@@ -14,13 +19,15 @@ const rootReducer = (state = initialState,action) => {
         case ALL_COUNTRIES: 
             return {
                 ...state,
-                countries: action.payload
+                countries: action.payload,
+                copyCountries: action.payload
             }
     
         case GET_COUNTRY_NAME: 
             return {
                 ...state,
-                countries: action.payload
+                countries: action.payload,
+                
             }
 
         case GET_COUNTRY_ID: 
@@ -32,7 +39,47 @@ const rootReducer = (state = initialState,action) => {
             return {
                 ...state
             }
-
+        
+        case SORT:
+            if(action.payload === 'asc'){
+               let countriesAsc = state.countries.sort((a, b) => (a.name > b.name ? 1 : a.name < b.name ? -1 : 0))
+                return {
+                    ...state,
+                    countries: countriesAsc
+                }
+            } else {
+                let countriesDes = state.countries.sort((b, a) => (a.name > b.name ? 1 : a.name< b.name ? -1 : 0))
+                return {
+                    ...state,
+                countries: countriesDes
+                }
+            }
+        case SORT_POPULATION:
+            if(action.payload === 'asc'){
+                let countriesMaMe = state.countries.sort((a, b) => (a.population > b.population ? 1 : a.population < b.population ? -1 : 0))
+                 return {
+                     ...state,
+                     countries: countriesMaMe
+                 }
+             } else {
+                 let countriesMeMa = state.countries.sort((b, a) => (a.population > b.population ? 1 : a.population< b.population ? -1 : 0))
+                 return {
+                     ...state,
+                 countries: countriesMeMa
+                 }
+             }
+        case SORT_CONTINENT:
+            if(action.payload){
+             let continente = action.payload === 'todos' ? state.copyCountries : state.copyCountries.filter(c => c.continents === action.payload)
+                return{
+                    ...state,
+                    countries: continente
+                }
+            } 
+            return{
+                ...state
+        
+            }
         case CLEAR:
             return {
                 ...state,

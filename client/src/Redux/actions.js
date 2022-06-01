@@ -4,8 +4,15 @@ export const GET_COUNTRY_NAME = 'GET_COUNTRY_NAME';
 export const GET_COUNTRY_ID = 'GET_COUNTRY_ID';
 export const CREATE_ACTIVITY = 'CREATE_ACTIVITY';
 export const CLEAR = 'CLEAR';
+export const SORT = 'SORT';
+export const SORT_POPULATION = 'SORT_POPULATION';
+export const SORT_CONTINENT = 'SORT_CONTINENT';
+
+// export const CLEAR_COUNTRIES = 'CLEAR_COUNTRIES';
 
 const API_URL = 'http://localhost:3001'
+
+
 
 export function allCountries() {
     return async (dispatch) => {
@@ -63,3 +70,40 @@ export function clear() {
         })
     }
 }
+
+// export function clearCountries() {
+//     return (dispatch) => {
+//         return dispatch({
+//             type: CLEAR_COUNTRIES,
+//             payload: [],
+//         })
+//     }
+// }
+
+export function sort(orden) {
+    return(dispatch) => {
+        return dispatch({
+            type: SORT,
+            payload: orden
+        })
+    }
+}
+
+export function sorNumerico(ordenNum){
+    return(dispatch) => {
+        return dispatch({
+            type: SORT_POPULATION,
+            payload: ordenNum
+        })
+    }
+}
+
+export function sortContinent(payload){
+    return(dispatch) => {
+        return dispatch({
+            type: SORT_CONTINENT,
+            payload
+        })
+    }
+}
+
