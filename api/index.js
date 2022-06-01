@@ -22,9 +22,14 @@ const { conn } = require('./src/db.js');
 const { countries } = require('./src/routes/Services/countries.service.js');
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => {
   server.listen(3001,async () => {
     console.log('%s listening at 3001')
-    const countriesData = await countries()  ; // eslint-disable-line no-console
+    try{
+      const countriesData = await countries()
+    } catch(error){
+      console.log(error)
+    }
+      ; // eslint-disable-line no-console
   });
 });

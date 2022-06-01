@@ -4,6 +4,7 @@ const getCountries = async function (req, res, next) {
     if(!req.params.id && !req.query.name) {
         try{
             const api = await getCountriesApi();
+            
             res.status(200).send(api)
         } catch(e) {
             next(e)
