@@ -5,13 +5,14 @@ import {ALL_COUNTRIES,
         CLEAR, 
         SORT,
         SORT_POPULATION,
-        SORT_CONTINENT} from "./actions";
+        SORT_CONTINENT,
+        SORT_ACTIVITY} from "./actions";
 
 const initialState = {
     countries: [],
     detail: [],
     copyCountries: [],
-    
+    allActivity: []
 }
 
 const rootReducer = (state = initialState,action) => {
@@ -20,7 +21,8 @@ const rootReducer = (state = initialState,action) => {
             return {
                 ...state,
                 countries: action.payload,
-                copyCountries: action.payload
+                copyCountries: action.payload,
+                allActivity: action.payload
             }
     
         case GET_COUNTRY_NAME: 
@@ -80,6 +82,20 @@ const rootReducer = (state = initialState,action) => {
                 ...state
         
             }
+        
+        case SORT_ACTIVITY:
+            let mapeoCountries = action.payload === 'todos' ? state.copyCountries : state.copyCountries.filter(c => {
+                let mapeo = c.activities?.map(d => d.name)
+                if (mapeo.includes(action.payload)){
+                    return c 
+                }
+            })
+            
+            return{
+                ...state,
+                countries: mapeoCountries
+            }
+       
         case CLEAR:
             return {
                 ...state,

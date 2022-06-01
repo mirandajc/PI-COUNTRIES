@@ -7,6 +7,8 @@ export const CLEAR = 'CLEAR';
 export const SORT = 'SORT';
 export const SORT_POPULATION = 'SORT_POPULATION';
 export const SORT_CONTINENT = 'SORT_CONTINENT';
+export const SORT_ACTIVITY = 'SORT_ACTIVITY';
+export const ALL_ACTIVITY = 'ALL_ACTIVITY';
 
 // export const CLEAR_COUNTRIES = 'CLEAR_COUNTRIES';
 
@@ -71,14 +73,7 @@ export function clear() {
     }
 }
 
-// export function clearCountries() {
-//     return (dispatch) => {
-//         return dispatch({
-//             type: CLEAR_COUNTRIES,
-//             payload: [],
-//         })
-//     }
-// }
+
 
 export function sort(orden) {
     return(dispatch) => {
@@ -106,4 +101,15 @@ export function sortContinent(payload){
         })
     }
 }
+
+export function sortActivity(payload){
+    return(dispatch) => {
+        return dispatch({
+            type: SORT_ACTIVITY,
+            payload
+        })
+    }
+}
+
+
 

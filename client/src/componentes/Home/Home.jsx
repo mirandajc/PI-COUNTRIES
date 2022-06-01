@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import NavBar from '../NavBar/Navbar';
 import Card from '../Card/Card';
 import { useDispatch, useSelector } from 'react-redux';
-import { allCountries, clear , sort, sorNumerico, sortContinent} from "../../Redux/actions";
+import { allCountries, clear , sort, sorNumerico, sortContinent, sortActivity, actividades} from "../../Redux/actions";
 import style from './Home.module.css'
 
 function Home() {
-    const { countries, copyCountries } = useSelector(state=> state)
+    const { countries, allActivity } = useSelector(state=> state)
 
     const dispatch = useDispatch();
     useEffect(()=> {
@@ -16,7 +16,11 @@ function Home() {
     },[dispatch])
     
     // filtro por continente
-    // const [continents, setContinents] = useState(countries)
+    let filtroActivity = allActivity.filter(c => {if(c.activities[0] !== undefined){ return c.activities}})
+    let arrayActivity = filtroActivity.map(c => c.activities[0]['name'])
+    let arrayActivity1 = arrayActivity.filter((item,index)=>{
+        return arrayActivity.indexOf(item) === index;
+      })
     
   
     function handleSelectAlfabetico(e){
@@ -30,12 +34,10 @@ function Home() {
     }
 
     function handleSelectContinent(e){
-        
-        e.preventDefault();
         dispatch(sortContinent(e.target.value))
-        // setContinents()
-        // setContinents(countries)
-        
+    }
+    function handleSelectActivity(e) {
+        dispatch(sortActivity(e.target.value))
     }
 
     return (
@@ -52,10 +54,6 @@ function Home() {
                     <option value='asc' >Asc</option>
                     <option value='des' >Des</option>
                 </select>
-                <select>
-                    <option>Actividades</option>
-                    <option></option>
-                </select>
                 <select  onChange={(e)=>handleSelectContinent(e)}>
                     <option >Continente</option>
                     <option value='todos' >Todos los continentes</option>
@@ -66,6 +64,15 @@ function Home() {
                     <option value='Europe' >Europe</option>
                     <option value='North America' >North America</option>
                     <option value='Oceania' >Oceania</option>
+                </select>
+                <select onChange={(e)=>handleSelectActivity(e)}> 
+                    <option >Filtro por Actividad</option>
+                    {arrayActivity1?.map(item => {
+                        return(
+                            <option value={item}>{item}</option> 
+                        )
+                    })
+                    }
                 </select>
             </div>
             <div className={style.card}>
