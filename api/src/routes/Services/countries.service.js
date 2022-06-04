@@ -31,9 +31,9 @@ const countries = async function() {
 }
 
 const getCountriesApi = async function() {
-    //const countriesData = await countries()
+    
     try{
-        
+        const countriesData = await countries()
         const getCountries = await Country.findAll({
             attributes: ['id', 'name', 'flags', 'continents', "population"],
             include: {
@@ -53,7 +53,7 @@ const getCountriesApi = async function() {
 
 const getDetailCountries = async function(id) {
     try{
-         // const countriesData = await countries()
+          const countriesData = await countries()
      const iD = id.toUpperCase()
      const detailCountrie = await Country.findOne({
          where:{

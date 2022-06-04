@@ -25,11 +25,11 @@ const { countries } = require('./src/routes/Services/countries.service.js');
 conn.sync({ force: true }).then(() => {
   server.listen(3001,async () => {
     console.log('%s listening at 3001')
-    try{
-      const countriesData = await countries()
-    } catch(error){
-      console.log(error)
-    }
+    // try{
+    //   const countriesData = await countries()
+    // } catch(error){
+    //   console.log(error)
+    // }
       ; // eslint-disable-line no-console
   });
 });
