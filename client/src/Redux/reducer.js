@@ -6,7 +6,8 @@ import {ALL_COUNTRIES,
         SORT,
         SORT_POPULATION,
         SORT_CONTINENT,
-        SORT_ACTIVITY} from "./actions";
+        SORT_ACTIVITY
+        } from "./actions";
 
 const initialState = {
     countries: [],
@@ -17,6 +18,13 @@ const initialState = {
 
 const rootReducer = (state = initialState,action) => {
     switch (action.type) {
+        // case CLEAR_ACTIVITY:
+        //     return{
+        //         ...state,
+        //         copyCountries:action.payload,
+        //         allActivity: action.payload,
+        //         countries: action.payload
+        //     }
         case ALL_COUNTRIES: 
             return {
                 ...state,

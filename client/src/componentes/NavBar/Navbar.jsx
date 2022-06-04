@@ -1,16 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Search from "../Search/Search";
+import logo from './logoHome.png'
+import style from './Navbar.module.css'
 
 function Navbar() {
     return (
-        <div>
-            <img src='https://i.pinimg.com/564x/f2/94/d8/f294d808ea703c6a0364c98d68476805.jpg'alt="logo"/>
+        <nav className={style.contenedor}>
+            <div>
+            <img  className={style.logo} src={logo}alt="logo"/>
+            </div>
+            <div >
             <Search/>
+            </div>
+            <div >
             <Link to='/activity'>
-                <button>Crear Nueva actividad</button>
+                <button className={style.search} >NUEVA ACTIVIDAD</button>
             </Link>
-        </div>
+            </div>
+        </nav>
     )
 }
 

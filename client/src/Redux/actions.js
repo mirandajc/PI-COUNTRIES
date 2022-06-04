@@ -10,7 +10,7 @@ export const SORT_CONTINENT = 'SORT_CONTINENT';
 export const SORT_ACTIVITY = 'SORT_ACTIVITY';
 export const ALL_ACTIVITY = 'ALL_ACTIVITY';
 
-// export const CLEAR_COUNTRIES = 'CLEAR_COUNTRIES';
+//  export const CLEAR_ACTIVITY = 'CLEAR_ACTIVITY';
 
 const API_URL = 'http://localhost:3001'
 
@@ -73,7 +73,13 @@ export function clear() {
     }
 }
 
-
+// export function clearActivity(){
+//     return(dispatch)=>{
+//     return dispatch({
+//         type: CLEAR_ACTIVITY,
+//         payload:[]
+//     })}
+// }
 
 export function sort(orden) {
     return(dispatch) => {

@@ -1,0 +1,66 @@
+.imagen{
+    background-image: url('./landing.jpg');
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.descripcion{
+    color: white;
+    width: 30rem;
+    height: 30rem;
+    font-size: 5vh ;
+    font-weight: bold;
+    line-height:  5rem;
+    opacity: .9;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding: 2rem;
+    margin: 3rem;
+    text-align: initial;
+    justify-content: flex-end;
+}
+
+.contenido{
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    flex-direction: row;
+    align-items: baseline;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.buttonHome{
+    cursor: pointer;
+    border: 1px solid #ffffff88;
+    border-radius: 2rem;
+    background-color: #ffffff;
+    height: 30px;
+    width: 100px;
+    color: rgba(0, 0, 0, 0.575);
+    font-size: 15px;
+    box-shadow: 0  6px 5px 1px rgba(255, 255, 255, 0.44);
+    margin:0   ;
+}
+
+.informacion{
+    color: #ffffff;
+    text-align: start;
+    /* display: flex; */
+    font-size: x-large;
+    /* align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap; */
+    flex-direction: column;
+}
+
+.logo{
+    width: auto;
+    height: 10rem;
+}

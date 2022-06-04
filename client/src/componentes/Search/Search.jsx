@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { countryByName } from "../../Redux/actions";
-
+import style from "./Search.module.css"
 
 function Search() {
     const [name, setName] = useState(''); 
@@ -20,9 +20,9 @@ function Search() {
     }
 
     return (
-        <div>
-            <input type='search' name='search' value={name}  onChange={e=> handleChange(e)} placeholder="Ingresa el nombre del pais..."/>
-            <button onClick={e=> handleSumit(e)} >Buscar</button>
+        <div className={style.contenedor} >
+            <input className={style.input} type='search' name='search' value={name}  onChange={e=> handleChange(e)} placeholder="Ingresa el nombre del pais..."/>
+            <button className={style.button} onClick={e=> handleSumit(e)} >BUSCAR</button>
         </div>
     )
 }

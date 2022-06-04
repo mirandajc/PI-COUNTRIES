@@ -1,0 +1,36 @@
+.logo{
+    /* background-image: url("./Framelogo.png"); */
+    height: 5rem;
+    padding: 2rem;
+    margin: 3rem;
+}
+
+
+.contenedor{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex-direction: row;
+    /* background: linear-gradient(90deg, rgba(172,25,152,1) 36%, rgba(255,0,189,1) 84%); */
+    background-image: url('../Landing/landing.jpg');
+    height: 7rem;
+    align-content: flex-start;
+    align-items: center;
+}
+
+.search{
+    cursor: pointer;
+    border: 1px solid #ffffff88;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    height: 1.5rem;
+    width: 7rem;
+    color: rgb(64, 0, 85);
+    font-size: 9px;
+    box-shadow: 0  5px 4px rgba(255, 255, 255, 0.44);
+    margin: 2rem;
+    margin-right: 5rem;
+    text-align: center;
+    font-weight: bolder;
+
+}

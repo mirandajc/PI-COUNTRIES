@@ -15,26 +15,28 @@ function Details() {
 
     return (
         <div>
+
+            <header>Descripcion de {detail.name}</header>
+            <section>
             <img src={detail.flags}  className={styles.imagen} alt='flags'/>
             <h1>Nombre: {detail.name}</h1>
             <h2>ID: {detail.id}</h2>
             <h2>Capital: {detail.capital}</h2>
             <h2>Poblacion: {detail.population}</h2>
             <h2>Area: {detail.area}</h2>
-            <h2>Subregion: {detail.subregion}</h2>
-            <div>
-                {detail.activities?.map( actividad =>
-                    { return (
-                        <div >
-                            <h1>Actividad</h1>
-                        <p>{actividad.name}</p>
-                        <p>{actividad.difficulty}</p>
-                        <p>{actividad.season}</p>
-                        <p>{actividad.duration}</p>
-                        </div>
-                    )}
+            <h2>Subregion: {detail.subregion}</h2>  
+            </section>
+            {detail.activities?.map( actividad =>
+                { return (
+                    <article key={Math.random().toString(36).substr(2, 9)}>
+                    <p> Actividad: {actividad.name}</p>
+                    <p>{actividad.difficulty}</p>
+                    <p>{actividad.season}</p>
+                    <p>{actividad.duration}</p>
+                    </article>
                 )}
-            </div>
+            )} 
+            
         </div>
     )
 }

@@ -16,6 +16,7 @@ function CreateActivity() {
     const navegate = useNavigate()
     useEffect(()=> {
         dispatch(allCountries())
+        // dispatch(clearActivity())
     },[dispatch])
 
     
@@ -71,12 +72,16 @@ function CreateActivity() {
 
     return (
         <div>
+            <nav>
             <Link to='/countries' ><button>Volver</button></Link>
+            </nav>
+            <section>
             <form onSubmit={handleSumit}>
                 <label  htmlFor='nombre' >Nombre</label>
                     <input type='text'  name="name" value={state.name} onChange={(e)=>{handleChange(e)}}/>
                 <label  htmlFor='nombre' >Duracion</label>
-                    <input name="duration" value={state.duration}  type='time'  min="06:00" max="22:00"  onChange={(e)=>{handleChange(e)}}/>
+                    <input name="duration" value={state.duration}  type='time'  min="01:00" max="12:00"  onChange={(e)=>{handleChange(e)}}/>
+                <label>Difucultad</label>
                     <label><input type="radio" value='1' name='difficulty' onChange={(e) => handleChoose(e)}/>1</label>
                     <label><input type="radio" value='2' name='difficulty' onChange={(e) => handleChoose(e)}/>2</label>
                     <label><input type="radio" value='3' name='difficulty' onChange={(e) => handleChoose(e)}/>3</label>
@@ -95,7 +100,7 @@ function CreateActivity() {
                         )
                     })}
                     </select>
-                    {state.countries.map(country => {
+                    {state.countries?.map(country => {
                         return (
                             <div>
                                 <p >{countries.find(c => c.id === country).name}</p>
@@ -105,6 +110,7 @@ function CreateActivity() {
                     })}
                 <button type="submit">Crear nueva actividad</button>
             </form>
+            </section>
         </div>
     )
 }
