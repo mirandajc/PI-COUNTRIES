@@ -21,7 +21,7 @@ function Search() {
 
     return (
         <div className={style.contenedor} >
-            <input className={style.input} type='search' name='search' value={name}  onChange={e=> handleChange(e)} placeholder="Ingresa el nombre del pais..."/>
+            <input className={style.input} type='search' name='search' value={name}  onChange={e=> handleChange(e)} placeholder="Por ejemplo: Argentina"/>
             <button className={style.button} onClick={e=> handleSumit(e)} >BUSCAR</button>
         </div>
     )

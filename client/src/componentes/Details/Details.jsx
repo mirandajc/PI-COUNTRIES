@@ -15,7 +15,6 @@ function Details() {
 
     return (
         <div>
-
             <header>Descripcion de {detail.name}</header>
             <section>
             <img src={detail.flags}  className={styles.imagen} alt='flags'/>

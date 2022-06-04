@@ -1,31 +1,32 @@
 .button{
     cursor: pointer;
-    border: 1px solid #ffffff88;
-    border-radius: 1rem;
-    background-color: #ffffff;
+    /* border: 1px solid #ffffff88; */
+    /* border-radius: 1rem; */
+    border: none;
+    background:none;
     height: 1.5rem;
-    width: 4rem;
-    color: rgb(64, 0, 85);
-    font-size: 9px;
-    box-shadow: 0  6px 4px  rgba(255, 255, 255, 0.44);
-    margin: 0.5rem;
+    width: 3rem;
+    color: #ffffff;
+    font-size: 13px;
+    /* box-shadow: 0  6px 4px  rgba(255, 255, 255, 0.44); */
+    margin: 0.3rem;
     text-align: center;
-    font-weight: bolder;
+    /* font-weight: bolder; */
 
 }
 
 .input{
-    cursor: pointer;
-    border: 1px solid #ffffff88;
+    cursor: auto;
+    border: none;
     border-radius: 1rem;
     background-color: #ffffff;
     height: 1.5rem;
-    width: 15rem;
+    width: 16rem;
     color: rgb(0, 0, 0);
     font-weight: bold;
-    font-size: 9px;
-    box-shadow: 0  5px 4px  rgba(255, 255, 255, 0.44);
-    margin: 1rem;
+    font-size: 12px;
+    /* box-shadow: 0  5px 4px  rgba(255, 255, 255, 0.44); */
+    margin: none;
     text-align: left;
     padding-left: 1rem;
 }

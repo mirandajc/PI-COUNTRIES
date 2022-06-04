@@ -8,10 +8,10 @@ function Card({flags, name, continents, id}) {
             <div className={styles.contenido}>
             <div><img className={styles.imagen} src={flags} alt="flag"/></div>
             
-            <div><h4>{name}</h4></div>
+            <div className={styles.pais}><h4>{name}</h4></div>
             <div><p>{continents}</p></div>
-            <div> <Link to={`/countries/${id}`} >
-                <button>Detalle</button>
+            <div className={styles.detalle}> <Link to={`/countries/${id}`} >
+                <button className={styles.button}>DETALLE</button>
             </Link></div>
             </div>
         </div>

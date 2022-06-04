@@ -98,9 +98,10 @@ function Home() {
                     }
                 </select>
             </nav>
-                    <Paginacion pag={pag} setPag={setPag} max={max} input={input} setInput={setInput} handlePagination={e=>handlePagination(e)}  />
+                    
             
             <div className={style.cardContent}>
+                <Paginacion pag={pag} setPag={setPag} max={max} input={input} setInput={setInput} handlePagination={e=>handlePagination(e)}  />
             {!countries.length ?
             <p>loading...</p>
             :

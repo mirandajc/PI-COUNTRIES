@@ -45,7 +45,7 @@
     width: 100px;
     color: rgba(0, 0, 0, 0.575);
     font-size: 15px;
-    box-shadow: 0  6px 5px 1px rgba(255, 255, 255, 0.44);
+    box-shadow: 0  6px 5px 1px rgb(255, 255, 255);
     margin:0   ;
 }
 

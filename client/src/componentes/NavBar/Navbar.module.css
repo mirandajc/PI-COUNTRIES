@@ -18,19 +18,26 @@
     align-items: center;
 }
 
-.search{
+.nuevaActividad{
     cursor: pointer;
-    border: 1px solid #ffffff88;
-    border-radius: 1rem;
-    background-color: #ffffff;
+    /* border: 1px solid #ffffff88; */
+    /* border-radius: 1rem; */
+    border: none;
+    background: none;
     height: 1.5rem;
-    width: 7rem;
-    color: rgb(64, 0, 85);
-    font-size: 9px;
-    box-shadow: 0  5px 4px rgba(255, 255, 255, 0.44);
-    margin: 2rem;
-    margin-right: 5rem;
-    text-align: center;
-    font-weight: bolder;
-
+    width: revert;
+    color: #ffffff;
+    font-size: 13px;
+    /* box-shadow: 0 6px 4px rgb(255 255 255 / 44%); */
+    margin: 0.3rem;
+    text-align: justify;
+    /* font-weight: bolder; */
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    align-content: flex-start;
+    padding-inline-end: 4rem;
+    word-spacing: 0.5rem;
+    border-bottom: 1px solid transparent;
+    transition: border .2s ease;
 }

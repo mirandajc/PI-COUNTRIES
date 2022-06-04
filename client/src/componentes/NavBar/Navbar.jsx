@@ -8,14 +8,16 @@ function Navbar() {
     return (
         <nav className={style.contenedor}>
             <div>
+            <Link to='/' >
             <img  className={style.logo} src={logo}alt="logo"/>
+            </Link>
             </div>
             <div >
             <Search/>
             </div>
             <div >
             <Link to='/activity'>
-                <button className={style.search} >NUEVA ACTIVIDAD</button>
+                <button className={style.nuevaActividad} >NUEVA ACTIVIDAD</button>
             </Link>
             </div>
         </nav>
