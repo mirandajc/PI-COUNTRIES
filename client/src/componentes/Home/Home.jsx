@@ -22,22 +22,13 @@ function Home() {
     let arrayActivity1 = arrayActivity.filter((item,index)=>{
         return arrayActivity.indexOf(item) === index;
       })
-    console.log(arrayActivity)
-    console.log(arrayActivity1)
 
     //------ Paginacion---
     const [pag, setPag] = useState(1);
     const [countriesPag ] = useState(10);
     let [input,setInput] = useState(1);
     const max = Math.ceil(countries?.length? countries.length/countriesPag : countries.length /countriesPag);
-    function handlePagination(e) {
-        if(e.target.value <= max && e.target.value >= 0) {
-            setInput(input = e.target.value)
-            setPag(e.target.value)
-        } else {
-            alert(`El num de Pag deber ser mayor o igual a 1 y menor o igual a ${max}`)
-        }
-    }
+  
     function handleSelectAlfabetico(e){
         e.preventDefault();
         dispatch(sort(e.target.value))
@@ -101,7 +92,7 @@ function Home() {
                     
             
             <div className={style.cardContent}>
-                <Paginacion pag={pag} setPag={setPag} max={max} input={input} setInput={setInput} handlePagination={e=>handlePagination(e)}  />
+                <Paginacion pag={pag} setPag={setPag} max={max} input={input} setInput={setInput}  />
             {!countries.length ?
             <p>loading...</p>
             :

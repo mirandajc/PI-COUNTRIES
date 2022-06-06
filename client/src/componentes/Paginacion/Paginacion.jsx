@@ -1,18 +1,31 @@
 import React from "react";
 import style from  './Paginacion.module.css'
-import button from './anteriorButton.png'
+// import button from './anteriorButton.png'
 
-function Paginacion({pag, setPag, max, input, setInput, handlePagination}){
-
+function Paginacion({pag, setPag, max, input, setInput}){
+console.log(input)
     const nextPage = () => {
-        setInput(input + 1);
-        setPag( pag + 1)
+        if( input + 1 <= max){
+            setInput(input + 1);
+            setPag( pag + 1)
+        }
+        
     }
     const prevPage = () => {
-        setInput    (input -1);
-        setPag  (pag - 1)
+        if( input -1 >= 1){
+            setInput    (input -1);
+            setPag  (pag - 1)
+        } 
     }
 
+    function handlePagination(e) {
+        if(e.target.value <= max && e.target.value >= 0) {
+            setInput(input = e.target.value)
+            setPag(e.target.value)
+        } else {
+            alert(`El num de Pag deber ser mayor o igual a 1 y menor o igual a ${max}`)
+        }
+    }
 
 
     return (

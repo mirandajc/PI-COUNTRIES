@@ -18,13 +18,7 @@ const initialState = {
 
 const rootReducer = (state = initialState,action) => {
     switch (action.type) {
-        // case CLEAR_ACTIVITY:
-        //     return{
-        //         ...state,
-        //         copyCountries:action.payload,
-        //         allActivity: action.payload,
-        //         countries: action.payload
-        //     }
+
         case ALL_COUNTRIES: 
             return {
                 ...state,
@@ -80,7 +74,7 @@ const rootReducer = (state = initialState,action) => {
              }
         case SORT_CONTINENT:
             if(action.payload){
-             let continente = action.payload === 'todos' ? state.copyCountries : state.copyCountries.filter(c => c.continents === action.payload)
+             let continente = action.payload === 'todos' ? state.copyCountries : state.copyCountries.filter(c => (c.continents === action.payload))
                 return{
                     ...state,
                     countries: continente
