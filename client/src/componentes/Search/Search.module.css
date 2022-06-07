@@ -1,18 +1,13 @@
 .button{
     cursor: pointer;
-    /* border: 1px solid #ffffff88; */
-    /* border-radius: 1rem; */
     border: none;
     background:none;
     height: 1.5rem;
     width: 3rem;
     color: #ffffff;
-    font-size: 13px;
-    /* box-shadow: 0  6px 4px  rgba(255, 255, 255, 0.44); */
+    font-size: 15px;
     margin: 0.3rem;
     text-align: center;
-    /* font-weight: bolder; */
-
 }
 
 .input{
@@ -20,11 +15,11 @@
     border: none;
     border-radius: 1rem;
     background-color: #ffffff;
-    height: 1.5rem;
-    width: 16rem;
+    height: 4vh;
+    width: 55vh;
     color: rgb(0, 0, 0);
-    font-weight: bold;
-    font-size: 12px;
+    /* font-weight: bold; */
+    font-size: 15px;
     /* box-shadow: 0  5px 4px  rgba(255, 255, 255, 0.44); */
     margin: none;
     text-align: left;

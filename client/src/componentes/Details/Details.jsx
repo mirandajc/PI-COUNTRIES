@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import {  countryById } from '../../Redux/actions'
 import styles from './Details.module.css'
+import Navbar from '../NavBar/Navbar'
 
 function Details() {
     const { detail } = useSelector(state=> state);
@@ -15,27 +16,35 @@ function Details() {
 
     return (
         <div>
-            <header>Descripcion de {detail.name}</header>
-            <section>
+            <Navbar/>
+            <header className={styles.header}>Descripcion de {detail.name}</header>
+            <section className={styles.contenedor}>
             <img src={detail.flags}  className={styles.imagen} alt='flags'/>
-            <h1>Nombre: {detail.name}</h1>
-            <h2>ID: {detail.id}</h2>
-            <h2>Capital: {detail.capital}</h2>
-            <h2>Poblacion: {detail.population}</h2>
-            <h2>Area: {detail.area}</h2>
-            <h2>Subregion: {detail.subregion}</h2>  
+            <div className={styles.detalles}>
+            <p>Nombre: {detail.name}</p>
+            <p>ID: {detail.id}</p>
+            <p>Capital: {detail.capital}</p>
+            <p>Poblacion: {detail.population}</p>
+            <p>Area: {detail.area}</p>
+            <p>Subregion: {detail.subregion}</p>
+            </div>
             </section>
+            <section className={styles.activity}>
             {detail.activities?.map( actividad =>
                 { return (
                     <article key={Math.random().toString(36).substr(2, 9)}>
-                    <p> Actividad: {actividad.name}</p>
-                    <p>{actividad.difficulty}</p>
-                    <p>{actividad.season}</p>
-                    <p>{actividad.duration}</p>
+                        <div className={styles.boxActivity}>
+                        <h3>Actividad</h3>
+                    <p>Nombre: {actividad.name}</p>
+                    <p>Dificultad: {actividad.difficulty}</p>
+                    <p>Temporada: {actividad.season}</p>
+                    <p>Duracion: {actividad.duration}</p>
+                    </div>
                     </article>
+
                 )}
             )} 
-            
+            </section>
         </div>
     )
 }

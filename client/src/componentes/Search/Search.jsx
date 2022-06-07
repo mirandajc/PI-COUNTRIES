@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+//import { useNavigate } from "react-router-dom";
 import { countryByName } from "../../Redux/actions";
 import style from "./Search.module.css"
 
 function Search() {
     const [name, setName] = useState(''); 
     const dispatch = useDispatch();
-    
+   // const navigate = useNavigate();
     function handleChange(e) {
         setName(
             e.target.value
@@ -17,6 +18,7 @@ function Search() {
         e.preventDefault()
         dispatch(countryByName(name))
         setName('')
+        // navigate('/countries')
     }
 
     return (

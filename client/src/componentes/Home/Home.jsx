@@ -27,22 +27,22 @@ function Home() {
     const [pag, setPag] = useState(1);
     const [countriesPag ] = useState(10);
     let [input,setInput] = useState(1);
-    const max = Math.ceil(countries?.length? countries.length/countriesPag : countries.length /countriesPag);
-  
+    let datos = countries === 'No se encontro el pais' ? '0' : countries;
+    const max = Math.ceil(datos?.length ? datos.length/countriesPag : datos.length /countriesPag);
+    console.log(max, datos)
+   
     function handleSelectAlfabetico(e){
         e.preventDefault();
         dispatch(sort(e.target.value))
         setInput(input=1)
         setPag(1)
     } 
-
     function handleSelectPopulation(e){
         e.preventDefault();
         dispatch(sorNumerico(e.target.value))
         setInput(input=1)
         setPag(1)
     }
-
     function handleSelectContinent(e){
         dispatch(sortContinent(e.target.value))
         setInput(input=1)
@@ -89,24 +89,27 @@ function Home() {
                     }
                 </select>
             </nav>
-                    
-            
-            <div className={style.cardContent}>
-                <Paginacion pag={pag} setPag={setPag} max={max} input={input} setInput={setInput}  />
+                <Paginacion pag={pag} setPag={setPag} max={max} input={input} setInput={setInput}/>
+            <div className={style.cardContent} >
             {!countries.length ?
-            <p>loading...</p>
+            <h2>LOADING...</h2>
             :
-            countries === "No se encontro el pais"
-                ? <p>No se encontro el pais, por favor vuelva a intentar</p>
+            countries === "No se encontro el pais" 
+                ? <h1>! Ups no encontramos el Pais 😅!
+                    Por favor vuelve a intentar 
+                </h1>
                 : countries.slice(
                     (pag-1)* countriesPag, 
                     (pag-1)* countriesPag + countriesPag
                 ).map(country=>{
-                    return( <Card flags={country.flags} name={country.name} continents={country.continents} key={country.id} id={country.id} activities={country.activities} />)
+                    return( 
+                    <div >
+                        <Card flags={country.flags} name={country.name} continents={country.continents} key={country.id} id={country.id} activities={country.activities} /> 
+                    </div>)
                 })
             }
         
-        </div>
+            </div>
             
         </div>
     )

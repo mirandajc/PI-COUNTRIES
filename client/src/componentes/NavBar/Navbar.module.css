@@ -11,27 +11,23 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     flex-direction: row;
-    /* background: linear-gradient(90deg, rgba(172,25,152,1) 36%, rgba(255,0,189,1) 84%); */
     background-image: url('../Landing/landing.jpg');
-    height: 7rem;
+    height: 8rem;
+    width: auto;
     align-content: flex-start;
     align-items: center;
 }
 
 .nuevaActividad{
     cursor: pointer;
-    /* border: 1px solid #ffffff88; */
-    /* border-radius: 1rem; */
     border: none;
     background: none;
     height: 1.5rem;
     width: revert;
     color: #ffffff;
-    font-size: 13px;
-    /* box-shadow: 0 6px 4px rgb(255 255 255 / 44%); */
+    font-size: 15px;
     margin: 0.3rem;
     text-align: justify;
-    /* font-weight: bolder; */
     display: flex;
     flex-direction: row-reverse;
     align-items: center;

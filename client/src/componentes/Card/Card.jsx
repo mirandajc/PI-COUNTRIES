@@ -7,7 +7,6 @@ function Card({flags, name, continents, id}) {
         <div className={styles.borde}>
             <div className={styles.contenido}>
             <div><img className={styles.imagen} src={flags} alt="flag"/></div>
-            
             <div className={styles.pais}><h4>{name}</h4></div>
             <div><p>{continents}</p></div>
             <div className={styles.detalle}> <Link to={`/countries/${id}`} >

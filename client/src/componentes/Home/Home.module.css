@@ -1,16 +1,16 @@
 .cardContent{
     display: flex;
+    /* margin: auto; */
+    padding: 2rem;
+    font: times;
+    width: auto;
+    height: auto;
+    /* background-image: url(../Landing/landing.jpg); */
     flex-direction: row;
     flex-wrap: wrap;
-    margin: auto;
-    padding: 2rem;
-    justify-content: space-evenly;
-    align-content: space-around;
+    align-content: center;
+    justify-content: center;
     align-items: center;
-    font: times;
-    /* background-image: url('../Landing/landing.jpg');*/
-    /* background: ; */
-
 } 
 
 .opciones{
@@ -59,4 +59,10 @@
     text-align: center;
     transition: border .2s ease;
     text-decoration: none;
+}
+
+
+.contenedorCards{
+    height: auto;
+    width: 50rem;
 }

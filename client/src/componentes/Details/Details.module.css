@@ -1,4 +1,58 @@
 .imagen{
-    width: 20rem;
-    height: auto;
+    width: auto;
+    height: 15rem;
+    padding: 1rem;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: 1rem;
+    padding: 1rem;
+    /* margin: 1rem; */
+    background-color: rgba(76, 0, 130, 0.099);
+    /* box-shadow: 0px 1px 4px 0px rgb(152, 100, 236); */
+}
+
+.contenedor{
+    display: flex;
+    display: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.detalles{
+    height: 15rem;
+    width: 25rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0px 1px 4px 0px rgb(152, 100, 236);
+    background-color: rgba(76, 0, 130, 0.099);
+}
+
+.activity{
+    color: rgb(73, 73, 73);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    border: 1rem;
+    height: 15rem;
+    /* background-color: rgba(76, 0, 130, 0.099); */
+    /* width: 10rem; */
+}
+
+.boxActivity{
+    width: 15rem;
+    height: 12rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: rgba(76, 0, 130, 0.099);
+    box-shadow: 0px 1px 4px 0px rgb(152, 100, 236);
 }

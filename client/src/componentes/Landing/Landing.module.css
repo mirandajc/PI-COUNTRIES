@@ -6,61 +6,89 @@
     position: relative;
     background-size: cover;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-}
-.descripcion{
-    color: white;
-    width: 30rem;
-    height: 30rem;
-    font-size: 5vh ;
-    font-weight: bold;
-    line-height:  5rem;
-    opacity: .9;
-    display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
-    padding: 2rem;
-    margin: 3rem;
-    text-align: initial;
-    justify-content: flex-end;
-}
-
-.contenido{
-    display: flex;
-    justify-content: center;
-    align-content: space-between;
-    flex-direction: row;
-    align-items: baseline;
-    padding: 2rem;
-    flex-wrap: wrap;
-}
-
-.buttonHome{
-    cursor: pointer;
-    border: 1px solid #ffffff88;
-    border-radius: 2rem;
-    background-color: #ffffff;
-    height: 30px;
-    width: 100px;
-    color: rgba(0, 0, 0, 0.575);
-    font-size: 15px;
-    box-shadow: 0  6px 5px 1px rgb(255, 255, 255);
-    margin:0   ;
-}
-
-.informacion{
-    color: #ffffff;
-    text-align: start;
-    /* display: flex; */
-    font-size: x-large;
-    /* align-items: center;
-    justify-content: flex-start;
-    flex-wrap: nowrap; */
     flex-direction: column;
+    align-content: stretch;
 }
-
 .logo{
     width: auto;
-    height: 10rem;
+    height: 8rem;
+    padding: 1.5rem;
+}
+.contenedor{
+    display: flex;
+    width: 100%;
+    height: 50rem;
+}
+.contenedorLogo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 5rem; 
+    /* padding: 1rem;
+    margin: 1rem; */
+    color: aliceblue;
+    
+}
+.descripcion{
+    display: flex;
+    color: aliceblue;
+    font-size: 1.5rem;
+    font-weight: 5px;
+    text-align: start;
+    font-family: sans-serif	;
+    font-weight: lighter;
+}
+.countryLogo{
+    display: flex;
+    width: 50%;
+    height: auto;
+    padding: 5rem;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+}
+.home{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: center;
+}
+.button{
+    margin: 1rem;
+    /* border: 1px solid;
+    border-color: white; */
+    border: none;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 1rem;
+    font-size: larger;
+    background-color: white;
+    color: #551A8B;
+    font-weight: bold;
+
+}
+.github{
+    width: auto;
+    height: 3rem;  
+    padding: 1.5rem;
+}
+.linkedin{
+    width: auto;
+    height: 4rem;  
+    padding: 1.5rem;
+}
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 3rem;
+}
+.country{
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-family: sans-serif	;
+    font-weight: normal;
 }
