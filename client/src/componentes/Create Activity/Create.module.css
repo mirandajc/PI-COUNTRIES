@@ -57,10 +57,10 @@ color: red
 .label{
     text-align: start;
     padding: none;
-    margin-left: 0.5rem;
+    /* margin-left: 0.5rem; */
+    font-size: 0.9rem;
     color: grey;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
 }
 
 input[type="radio"]:checked {

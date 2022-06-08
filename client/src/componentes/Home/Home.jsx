@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { allCountries, clear , sort, sorNumerico, sortContinent, sortActivity} from "../../Redux/actions";
 import style from './Home.module.css'
 import Paginacion from "../Paginacion/Paginacion";
+import loading from './logoapp1-01.png'
 
 function Home() {
     const { countries, allActivity } = useSelector(state=> state)
@@ -92,18 +93,21 @@ function Home() {
                 <Paginacion pag={pag} setPag={setPag} max={max} input={input} setInput={setInput}/>
             <div className={style.cardContent} >
             {!countries.length ?
-            <h2>LOADING...</h2>
+           <div  className={style.loading}>
+           <img src={loading}  className={style.imagenLoading}/>
+       </div>
             :
             countries === "No se encontro el pais" 
                 ? <h1>! Ups no encontramos el Pais 😅!
-                    Por favor vuelve a intentar 
+                    <p>Por favor vuelve a intentar </p>
                 </h1>
+                
                 : countries.slice(
                     (pag-1)* countriesPag, 
                     (pag-1)* countriesPag + countriesPag
                 ).map(country=>{
                     return( 
-                    <div >
+                    <div>
                         <Card flags={country.flags} name={country.name} continents={country.continents} key={country.id} id={country.id} activities={country.activities} /> 
                     </div>)
                 })

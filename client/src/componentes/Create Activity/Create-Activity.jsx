@@ -114,11 +114,11 @@ function CreateActivity() {
                     <label className={styles.label}>Temporada</label>
                     <div className={styles.contenedor} >
                 
-                     <label className={styles.label}>Verano</label>
+                     <label className={styles.label}>Verano 🥵</label>
                      <input className={styles.input}  type="radio" id="Summer" value='Summer' name='season' onChange={(e) => handleChoose(e)}/>
-                     <label className={styles.label}>Otoño</label><input className={styles.input}  type="radio" id="Autumn" value='Autumn' name='season' onChange={(e) => handleChoose(e)}/>
-                     <label className={styles.label}>Invierno</label><input className={styles.input}  type="radio" id="Winter" value='Winter' name='season' onChange={(e) => handleChoose(e)}/>
-                     <label className={styles.label}>Primavera</label><input className={styles.input}  type="radio" id="Spring" value='Spring' name='season' onChange={(e) => handleChoose(e)}/>
+                     <label className={styles.label}>Otoño 🍁</label><input className={styles.input}  type="radio" id="Autumn" value='Autumn' name='season' onChange={(e) => handleChoose(e)}/>
+                     <label className={styles.label}>Invierno 🥶</label><input className={styles.input}  type="radio" id="Winter" value='Winter' name='season' onChange={(e) => handleChoose(e)}/>
+                     <label className={styles.label}>Primavera 🌸</label><input className={styles.input}  type="radio" id="Spring" value='Spring' name='season' onChange={(e) => handleChoose(e)}/>
                      </div>
                 <label className={styles.label}>Pais</label>
                     <select className={styles.country} placeholder='Selecciona el o los paises' name="countries" onChange={(e)=> handleSelect(e)} required>

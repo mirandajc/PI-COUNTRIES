@@ -4,9 +4,11 @@ import { useParams } from "react-router-dom";
 import {  countryById } from '../../Redux/actions'
 import styles from './Details.module.css'
 import Navbar from '../NavBar/Navbar'
+import loading from './logoapp1-01.png'
 
 function Details() {
     const { detail } = useSelector(state=> state);
+    // detail.name = '';
     const {id} = useParams()
     const dispatch = useDispatch();
     useEffect(()=> {
@@ -17,6 +19,8 @@ function Details() {
     return (
         <div>
             <Navbar/>
+            {detail.name ? 
+            <>
             <header className={styles.header}>Descripcion de {detail.name}</header>
             <section className={styles.contenedor}>
             <img src={detail.flags}  className={styles.imagen} alt='flags'/>
@@ -44,7 +48,12 @@ function Details() {
 
                 )}
             )} 
-            </section>
+            </section> 
+            </>
+            : <div  className={styles.loading}>
+                <img src={loading}  className={styles.imagenLoading}/>
+            </div>
+            }
         </div>
     )
 }

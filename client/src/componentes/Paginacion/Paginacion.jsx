@@ -3,7 +3,7 @@ import style from  './Paginacion.module.css'
 // import button from './anteriorButton.png'
 
 function Paginacion({pag, setPag, max, input, setInput}){
-    console.log(max)
+   
     const nextPage = () => {
         if( input + 1 <= max){
             setInput(input + 1);

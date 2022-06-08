@@ -33,12 +33,14 @@ function Landing() {
                     <p >Trabajo individual Henry</p>
                 </div>
                 <div>
-                    <Link to='https://github.com/mirandajc'>
-                        <img src={github} className={style.github} alt="" />
-                    </Link>
+                    {/* <Link to='https://github.com/mirandajc'> */}
+                    <a href="https://github.com/mirandajc"><img src={github} className={style.github} alt="" /></a>
+                        
+                    {/* </Link> */}
                 </div>
                 <div>
-                    <img src={linkedin} className={style.linkedin} alt />
+                    <a href="https://www.linkedin.com/in/jocelynmiranda/"><img src={linkedin} className={style.linkedin} alt /></a>
+                    
                 </div></div>
         </div>
     )

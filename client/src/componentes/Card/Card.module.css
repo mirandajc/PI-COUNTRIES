@@ -5,28 +5,22 @@
 }
 
 .borde{
-    width: 12rem;
-    height: 14rem;
+    
+    width: 15rem;
+    height: 18rem;
     border-radius: 1rem;
     margin: 1rem;
     border: solid 1px rgba(128, 128, 128, 0.458);
     padding: 0.5rem;
     display: inline-grid;
     align-content: space-around;
-    justify-content: space-around;
-    align-items: stretch;
-    justify-items: stretch;
     box-shadow: 0px 7px 12px 3px rgb(134 134 134 / 40%);
 }
-/* borde::shadow{
-    transform: scale(0.5) translate(-100%, -100%);
-} */
+
 .imagen{
     background: center;
     width: 8rem;
     height: 5rem;
-
-    
 }
 
 .contenido{
@@ -38,9 +32,9 @@
     padding: none;
 }
 .pais{
-    font-size: 15px;
-    height: 25px;
-    text-align: justify;
+    height: 4rem;
+    width: 12rem;
+    text-align: center;
 }
 
 .detalle{

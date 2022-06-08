@@ -66,3 +66,29 @@
     height: auto;
     width: 50rem;
 }
+.imagenLoading{
+    width: 12rem;
+    height: 12rem;
+
+}
+
+.loading{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    animation: animar 5s cubic-bezier(0, 0, 1, 1.03) infinite;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes animar {
+    0% {
+      transform: rotate(0deg);
+
+    }
+
+    100% {
+      transform: rotate(360deg);
+
+    }
+}
