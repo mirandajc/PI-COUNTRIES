@@ -5,14 +5,16 @@
 }
 
 .header{
+  color: white;
     display: flex;
+    flex-wrap: nowrap;
+    justify-content:space-evenly;
+    flex-direction: row;
+    background-image: url('../Landing/landing_landing.png');
+    height: 8rem;
+    width: auto;
+    align-content: flex-start;
     align-items: center;
-    justify-content: center;
-    display: 1rem;
-    padding: 1rem;
-    /* margin: 1rem; */
-    background-color: rgba(76, 0, 130, 0.099);
-    /* box-shadow: 0px 1px 4px 0px rgb(152, 100, 236); */
 }
 
 .contenedor{
@@ -57,8 +59,8 @@
 }
 
 .imagenLoading{
-    width: 12rem;
-    height: 12rem;
+    width: 8rem;
+    height: 8rem;
 
 }
 
@@ -83,3 +85,17 @@
     }
 }
 
+.volver{
+    margin: 1rem;
+    /* border: 1px solid;
+    border-color: white; */
+    border: none;
+    width: 5rem;
+    height: 1.5rem;
+    border-radius: 1rem;
+    font-size: large;
+    background-color: white;
+    color: #551A8B;
+    font-weight: none;
+
+}

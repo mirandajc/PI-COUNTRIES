@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { allCountries, createActivity} from '../../Redux/actions'
 import styles from './Create.module.css'
-import Navbar from '../NavBar/Navbar'
-
+// import Navbar from '../NavBar/Navbar'
+import { Link } from "react-router-dom";
 function CreateActivity() {
-    const [error, setError] = useState(false);
+    const [error, setError] = useState('');
+    const [mostrarError, setMostrarError] = useState(false)
     const [state, setState] = useState({
         name: '',
         difficulty: 0,
@@ -56,14 +57,34 @@ function CreateActivity() {
     function handleSumit(e) {
 
             e.preventDefault();
-            const { name, difficulty, duration , season, countries} = state;
-            if (!name.trim() || !difficulty || !duration || !season.trim() || countries.length < 1) {
-                console.log("campos vacíos");
-                setError(true);
-                return;
-            } else {
-                setError(false);
+            const { name, difficulty, season, countries} = state;
+            if( !name.trim() || !/^[a-zA-Z\ áéíóúÁÉÍÓÚñÑ\s]*$/.test(name) || name.length <= 3){
+                setError('Tu nombre no debe contener caracteres especiales y debe ser mayor a dos')
+                setMostrarError(true)
+                return 
+            } 
+            if( !difficulty ){
+                setError('Debes de seleccionar un nivel de Dificultad')
+                setMostrarError(true)
+                return
             }
+            if( !season.trim()){
+                setError('Debes de seleccionar alguna estacion del año')
+                setMostrarError(true)
+                return
+            }
+            if(countries.length < 1 ){
+                setError('Debes de seleccionar al menos un Pais')
+                setMostrarError(true)
+                return
+            }
+            // if (!name.trim() || !difficulty || !duration || !season.trim() || countries.length < 1) {
+            //     console.log("campos vacíos");
+            //     setError(true);
+            //     return;
+            // } else {
+            //     setError(false);
+            // }
             dispatch(createActivity(state))
             setState({
                 name: '',
@@ -78,7 +99,7 @@ function CreateActivity() {
             // if(state.name.length < 2 ){
             //     alert('El nombre debe contener mas de 2 palabras')
             // }
-        
+        //!/^[A-Za-zÁÉÍÓÚáéíóúñÑ] para validar el input
     }
     const PintarError = () => (
         <div className={styles.error}>Todos los campos obligatorios</div>
@@ -87,12 +108,17 @@ function CreateActivity() {
 
     return (
         <>
-            <Navbar/>
-            
-            {error && <PintarError/>}
+            {/* <Navbar/> */}
+            <header className={styles.header}>
+            <Link to='/countries'>
+            <button className={styles.volver}>Volver</button>
+            </Link> 
+            <div>Formulario</div></header>
+
             <section className={styles.contenedorFormulario} >
             <div className={styles.formulario}>
             <form onSubmit={handleSumit}>
+            {mostrarError && <p className={styles.error}>{error}</p>}
                 <><label className={styles.label} htmlFor='nombre' >Nombre</label>
                     <input className={styles.name} placeholder='Nombre de tu Actividad' type='text' id="name" name="name" value={state.name} onChange={(e)=>{handleChange(e)}} required /></>
                 

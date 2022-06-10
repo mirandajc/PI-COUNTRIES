@@ -1,6 +1,28 @@
 .error{
-color: red
+border-radius: 1rem;
+padding: 0.5rem;
+font-size: medium;
+text-align: center;
+font-weight: 300;
+animation: errores 2s ease infinite;
+color: red;
 }
+@keyframes errores{
+    0%{
+        
+        color:#4f187aca;
+    }
+    50%{
+        background-color: #4f187aca;
+        color: rgb(255, 255, 255);
+        
+    }
+    
+100%{
+    color: #4f187aca;
+}
+}
+
 .contenedorFormulario{
     display: flex;
     align-items: center;
@@ -169,4 +191,30 @@ buttonClose:hover{
 .parrafo{
     margin: 0.5rem ;
     padding: 0.5rem;
+}
+.header{
+    color: white;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content:space-evenly;
+      flex-direction: row;
+      background-image: url('../Landing/landing_landing.png');
+      height: 8rem;
+      width: auto;
+      align-content: flex-start;
+      align-items: center;
+  }
+  .volver{
+    margin: 1rem;
+    /* border: 1px solid;
+    border-color: white; */
+    border: none;
+    width: 5rem;
+    height: 1.5rem;
+    border-radius: 1rem;
+    font-size: large;
+    background-color: white;
+    color: #551A8B;
+    font-weight: none;
+
 }

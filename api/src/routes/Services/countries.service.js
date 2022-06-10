@@ -17,7 +17,7 @@ const countries = async function() {
                     capital: element.capital !== undefined ? element.capital[0] : 'No esta definido Capital',
                     subregion: element.subregion !== undefined ? element.subregion : 'No esta definido Subregion',
                     area: element.area,
-                    population: element.population
+                    population: element.population,
                 },
                 row: false
             })

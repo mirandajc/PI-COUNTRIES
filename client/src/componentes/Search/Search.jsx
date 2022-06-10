@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 //import { useNavigate } from "react-router-dom";
 import { countryByName } from "../../Redux/actions";
+// import Paginacion from "../Paginacion/Paginacion";
 import style from "./Search.module.css"
+// import Paginacion from '../Paginacion/Paginacion'
 
 function Search() {
     const [name, setName] = useState(''); 
     const dispatch = useDispatch();
+    // const [ inputpag, setInputPag ] = useState();
    // const navigate = useNavigate();
     function handleChange(e) {
         setName(
@@ -18,6 +21,8 @@ function Search() {
         e.preventDefault()
         dispatch(countryByName(name))
         setName('')
+    
+        // setInputPag(1)
         // navigate('/countries')
     }
 

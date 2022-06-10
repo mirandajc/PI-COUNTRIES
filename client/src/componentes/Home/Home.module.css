@@ -16,49 +16,46 @@
 .opciones{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    justify-content: space-around;
+    justify-content: flex-end;
     height: 3rem;
+    flex-wrap: nowrap;
+    align-items: center;
+    /* border-left: 1px;
+    border-right: 1px; */
+    /* border: 1px; */
+    border:none
 }
 
 .orden{
-    margin-left: 4rem;
-    cursor: pointer;
-    border: 1px solid rgb(64, 0, 85);
-    border-radius: 1rem;
-    background-color: #ffffff;
-    height: 1.5rem;
-    width: 7rem;
-    color: rgb(64, 0, 85);
-    text-align: center;
-    /* font-weight: bolder; */
+    border: none;
+       /* margin-left: 4rem; */
+       cursor: pointer;
+        background-color: #ffffff;
+       height: 1.5rem;
+       width: 8rem;
+       color: rgb(64, 0, 85);
+       text-align: center;
+       
 }
 
 .actividad{
-    margin-right: 4rem;
-    cursor: pointer;
-    border: 1px solid rgb(64, 0, 85);
-    border-radius: 1rem;
-    background-color: #ffffff;
-    height: 1.5rem;
-    width: 8rem;
-    color: rgb(64, 0, 85);
-    margin-right: 5rem;
-    text-align: center;
+      /* margin-left: 4rem; */
+      cursor: pointer;
+      border: none;
+      background-color: #ffffff;
+      height: 1.5rem;
+      width: 8rem;
+      color: rgb(64, 0, 85);
+      text-align: center;
+      margin-right: 1rem;
 }
 .poblacion{
+    border: none;
     cursor: pointer;
-    border: 1px solid rgb(64, 0, 85);
-    border-radius: 1rem;
-    background-color: #ffffff;
     height: 1.5rem;
     width: 8rem;
     color: rgb(64, 0, 85);
     text-align: center;
-    transition: border .2s ease;
-    text-decoration: none;
 }
 
 
@@ -67,9 +64,8 @@
     width: 50rem;
 }
 .imagenLoading{
-    width: 12rem;
-    height: 12rem;
-
+    width: 8rem;
+    height: 8rem;
 }
 
 .loading{

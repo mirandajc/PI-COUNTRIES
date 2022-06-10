@@ -8,14 +8,15 @@ import Paginacion from "../Paginacion/Paginacion";
 import loading from './logoapp1-01.png'
 
 function Home() {
-    const { countries, allActivity } = useSelector(state=> state)
+    const { countries, allActivity} = useSelector(state=> state)
 
     const dispatch = useDispatch();
     useEffect(()=> {
+        // dispatch(countryByName(name))
         dispatch(allCountries())
         dispatch(clear())
     },[dispatch])
-    
+
     // filtro por continente
     // const [state, setState] = useStateallActivity
     let filtroActivity = allActivity.filter(c => {if(c.activities[0] !== undefined){ return c.activities}})
@@ -90,6 +91,7 @@ function Home() {
                     }
                 </select>
             </nav>
+
                 <Paginacion pag={pag} setPag={setPag} max={max} input={input} setInput={setInput}/>
             <div className={style.cardContent} >
             {!countries.length ?
