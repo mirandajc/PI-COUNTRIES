@@ -54,7 +54,7 @@ const getCountriesApi = async function() {
 const getDetailCountries = async function(id) {
     try{
           const countriesData = await countries()
-     const iD = id.toUpperCase()
+     const iD = id.toUpperCase() // convierte en mayusculas
      const detailCountrie = await Country.findOne({
          where:{
              id: iD
@@ -77,7 +77,6 @@ const getDetailCountries = async function(id) {
 
 const searchCountriesByName = async function(name) {
     try{
-
         const countrie = await Country.findAll({
             where: 
                 { name: Sequelize.where( Sequelize.fn('LOWER', Sequelize.col('name')), 'LIKE', '%' + name + '%')

@@ -18,16 +18,14 @@ function Details() {
 
     return (
         <div>
-            {/* <Navbar/> */}
+             <header className={styles.header}>
+                
+                <Link to='/countries'>
+                <button className={styles.volver}>Volver</button>
+                </Link> 
+                <div>Descripcion de {detail.name}</div></header>
             {detail.name ? 
             <>
-            <header className={styles.header}>
-                
-            <Link to='/countries'>
-            <button className={styles.volver}>Volver</button>
-            </Link> 
-            <div>Descripcion de {detail.name}</div></header>
-            
             <section className={styles.contenedor}>
             <img src={detail.flags}  className={styles.imagen} alt='flags'/>
             <div className={styles.detalles}>

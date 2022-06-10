@@ -4,7 +4,7 @@ import Search from "../Search/Search";
 import logo from './logoHome.png'
 import style from './Navbar.module.css'
 
-function Navbar() {
+function Navbar({setInput, setPag}) {
     return (
         <nav className={style.contenedor}>
             <div>
@@ -13,10 +13,10 @@ function Navbar() {
             </Link>
             </div>
             <div >
-            <Search/>
+            <Search setInput={setInput} setPag={setPag}/>
             </div>
             <div >
-            <Link to='/activity'>
+            <Link to='/activity' className={style.textCreate}>
                 <button className={style.nuevaActividad} >NUEVA ACTIVIDAD</button>
             </Link>
             </div>

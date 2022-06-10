@@ -192,6 +192,7 @@ buttonClose:hover{
     margin: 0.5rem ;
     padding: 0.5rem;
 }
+
 .header{
     color: white;
       display: flex;
@@ -204,6 +205,7 @@ buttonClose:hover{
       align-content: flex-start;
       align-items: center;
   }
+
   .volver{
     margin: 1rem;
     /* border: 1px solid;
@@ -216,5 +218,4 @@ buttonClose:hover{
     background-color: white;
     color: #551A8B;
     font-weight: none;
-
 }

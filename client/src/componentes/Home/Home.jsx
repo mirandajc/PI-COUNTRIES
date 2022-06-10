@@ -58,7 +58,7 @@ function Home() {
 
     return (
         <div className={style.imagen}>
-            <NavBar/>
+            <NavBar setInput={setInput} setPag={setPag}/>
             <nav className={style.opciones}>
                 <select className={style.orden} onChange={(e)=> handleSelectAlfabetico(e)} >
                     <option>ORDEN</option>
@@ -100,8 +100,8 @@ function Home() {
        </div>
             :
             countries === "No se encontro el pais" 
-                ? <h1>! Ups no encontramos el Pais 😅!
-                    <p>Por favor vuelve a intentar </p>
+                ? <h1 className={style.search}>! Ups no encontramos el Pais 😅!
+                    <br/>Por favor vuelve a intentar
                 </h1>
                 
                 : countries.slice(

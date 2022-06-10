@@ -6,11 +6,10 @@ import { countryByName } from "../../Redux/actions";
 import style from "./Search.module.css"
 // import Paginacion from '../Paginacion/Paginacion'
 
-function Search() {
+function Search({setInput, setPag}) {
     const [name, setName] = useState(''); 
     const dispatch = useDispatch();
-    // const [ inputpag, setInputPag ] = useState();
-   // const navigate = useNavigate();
+   
     function handleChange(e) {
         setName(
             e.target.value
@@ -21,9 +20,8 @@ function Search() {
         e.preventDefault()
         dispatch(countryByName(name))
         setName('')
-    
-        // setInputPag(1)
-        // navigate('/countries')
+        setInput(1)
+        setPag(1)
     }
 
     return (

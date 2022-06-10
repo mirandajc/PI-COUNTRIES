@@ -1,3 +1,13 @@
+.search{
+    font-weight: 300;
+    font-size: 40px;
+    color: rgb(64, 0, 85);
+    text-align: center;
+    background-color: rgb(244 225 244 / 82%);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
 .cardContent{
     display: flex;
     /* margin: auto; */

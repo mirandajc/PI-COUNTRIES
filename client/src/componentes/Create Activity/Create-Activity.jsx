@@ -55,11 +55,10 @@ function CreateActivity() {
         })
     }
     function handleSumit(e) {
-
             e.preventDefault();
             const { name, difficulty, season, countries} = state;
             if( !name.trim() || !/^[a-zA-Z\ áéíóúÁÉÍÓÚñÑ\s]*$/.test(name) || name.length <= 3){
-                setError('Tu nombre no debe contener caracteres especiales y debe ser mayor a dos')
+                setError('El nombre no debe contener caracteres especiales y debe ser mayor a dos')
                 setMostrarError(true)
                 return 
             } 
@@ -78,13 +77,6 @@ function CreateActivity() {
                 setMostrarError(true)
                 return
             }
-            // if (!name.trim() || !difficulty || !duration || !season.trim() || countries.length < 1) {
-            //     console.log("campos vacíos");
-            //     setError(true);
-            //     return;
-            // } else {
-            //     setError(false);
-            // }
             dispatch(createActivity(state))
             setState({
                 name: '',
@@ -95,16 +87,11 @@ function CreateActivity() {
             })
             alert('Su actividad se creo exitosamente')
             navegate('/countries')
-            
-            // if(state.name.length < 2 ){
-            //     alert('El nombre debe contener mas de 2 palabras')
-            // }
-        //!/^[A-Za-zÁÉÍÓÚáéíóúñÑ] para validar el input
+   
     }
     const PintarError = () => (
         <div className={styles.error}>Todos los campos obligatorios</div>
     );
-
 
     return (
         <>
