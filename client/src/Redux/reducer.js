@@ -20,11 +20,16 @@ const rootReducer = (state = initialState,action) => {
     switch (action.type) {
 
         case ALL_COUNTRIES: 
+        const filtroActivity = action.payload.filter(c => {if(c.activities[0] !== undefined){ return c.activities}})
+        const arrayActivity = filtroActivity.map(c => (c.activities[0]['name']))
+        const arrayActivity1 = arrayActivity.filter((item,index)=>{
+            return arrayActivity.indexOf(item) === index;
+          })
             return {
                 ...state,
                 countries: action.payload,
                 copyCountries: action.payload,
-                allActivity: action.payload
+                allActivity: arrayActivity1
             }
     
         case GET_COUNTRY_NAME: 

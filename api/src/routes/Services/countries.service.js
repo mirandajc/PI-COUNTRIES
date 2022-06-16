@@ -2,30 +2,34 @@ const axios = require('axios')
 const { Country , Activity} = require('../../db')
 // const {Op} = require('sequelize')
 const { Sequelize } = require('sequelize');
+const allCountriesData = require('./all_countries.json')
 
 const countries = async function() {
     try{
 
-        const api = await axios('https://restcountries.com/v3/all')
-        const apiData = api.data?.map( async element => {
-            await Country.findOrCreate({
+        // const api = await axios('https://restcountries.com/v3/all')
+        // const apiData = api.data?.map( async element => {
+            
+        const apiData = allCountriesData.data?.map( element => {
+            return Country.findOrCreate({
                 where:{
                     id: element.cca3,
                     name: element.name['common'],
-                    flags: element.flags[0],
+                    flags: element.flags.svg,
                     continents: element.continents[0],
                     capital: element.capital !== undefined ? element.capital[0] : 'No esta definido Capital',
                     subregion: element.subregion !== undefined ? element.subregion : 'No esta definido Subregion',
                     area: element.area,
                     population: element.population,
-                },
-                row: false
+                }
             })
-            await Promise.all(apiData)
-            return apiData
+            // await Promise.all(apiData)
+            // return apiData
         })
+        await Promise.all(apiData)
+            return apiData
     } catch(error){
-        console.log(error)
+        console.log(error,'Su pais ya fue creado')
     }
     
 }
@@ -67,7 +71,7 @@ const getDetailCountries = async function(id) {
                 }
             },
      });
-    
+
     return detailCountrie
     } catch(error) {
         console.log(error)

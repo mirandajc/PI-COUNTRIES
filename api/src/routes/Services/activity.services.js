@@ -9,7 +9,7 @@ const createActivity = async function(activity) {
             season: activity.season
         })
     
-    Promise.all(activity.countries.map(async element => {
+    return  Promise.all(activity.countries.map(async element => {
         let activityCountrie = await Country.findOne({
             where:{ 
                 id: element
@@ -17,7 +17,7 @@ const createActivity = async function(activity) {
         })
         await newActivity.addCountry(activityCountrie)
     }));
-
+    
     // crear una ruta para ver todas las actividades creadas
 }
 

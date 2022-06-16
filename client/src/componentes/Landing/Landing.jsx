@@ -6,7 +6,6 @@ import github from './icone-github-noir.png'
 import linkedin from './logo-linkedin-removebg-preview.png'
 function Landing() {
     return (
-        
         <div className={style.imagen}>
             <div className={style.contenedor}>
                 <div className={style.countryLogo}>

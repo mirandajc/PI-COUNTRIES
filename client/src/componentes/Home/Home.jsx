@@ -6,32 +6,31 @@ import { allCountries, clear , sort, sorNumerico, sortContinent, sortActivity} f
 import style from './Home.module.css'
 import Paginacion from "../Paginacion/Paginacion";
 import loading from './logoapp1-01.png'
+import { Link } from "react-router-dom";
 
 function Home() {
     const { countries, allActivity} = useSelector(state=> state)
 
     const dispatch = useDispatch();
     useEffect(()=> {
-        // dispatch(countryByName(name))
         dispatch(allCountries())
         dispatch(clear())
     },[dispatch])
 
     // filtro por continente
     // const [state, setState] = useStateallActivity
-    let filtroActivity = allActivity.filter(c => {if(c.activities[0] !== undefined){ return c.activities}})
-    let arrayActivity = filtroActivity.map(c => c.activities[0]['name'])
-    let arrayActivity1 = arrayActivity.filter((item,index)=>{
-        return arrayActivity.indexOf(item) === index;
-      })
-
+    // let filtroActivity = allActivity.filter(c => {if(c.activities[0] !== undefined){ return c.activities}})
+    // let arrayActivity = filtroActivity.map(c => c.activities[0]['name'])
+    // let arrayActivity1 = arrayActivity.filter((item,index)=>{
+    //     return arrayActivity.indexOf(item) === index;
+    //   })
+      console.log(allActivity)
     //------ Paginacion---
     const [pag, setPag] = useState(1);
     const [countriesPag ] = useState(10);
     let [input,setInput] = useState(1);
     let datos = countries === 'No se encontro el pais' ? '0' : countries;
     const max = Math.ceil(datos?.length ? datos.length/countriesPag : datos.length /countriesPag);
-    console.log(max, datos)
    
     function handleSelectAlfabetico(e){
         e.preventDefault();
@@ -83,7 +82,7 @@ function Home() {
                 </select>
                 <select className={style.actividad} onChange={(e)=>handleSelectActivity(e)}> 
                     <option >ACTIVIDAD</option>
-                    {arrayActivity1?.map(item => {
+                    {allActivity?.map(item => {
                         return(
                             <option value={item} key={Math.random()}>{item}</option> 
                             )
@@ -91,7 +90,6 @@ function Home() {
                     }
                 </select>
             </nav>
-
                 <Paginacion pag={pag} setPag={setPag} max={max} input={input} setInput={setInput}/>
             <div className={style.cardContent} >
             {!countries.length ?
