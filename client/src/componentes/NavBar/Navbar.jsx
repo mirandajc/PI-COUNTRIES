@@ -5,6 +5,9 @@ import logo from './logoHome.png'
 import style from './Navbar.module.css'
 
 function Navbar({setInput, setPag}) {
+    // const { width } = React.useViewport();
+
+    console.log(React.useViewport)
     return (
         <nav className={style.contenedor}>
             <div>

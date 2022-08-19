@@ -40,3 +40,12 @@
 .textCreate{
     text-decoration: none;
 }
+
+@media screen and (max-width: 480px){
+    .contenedor{
+        background-image: none;
+        background: rgb(64,0,85);
+        background: linear-gradient(90deg, rgba(64,0,85,1) 0%, rgba(195,65,115,1) 100%);
+        display: flex;
+    }
+}

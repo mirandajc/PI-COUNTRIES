@@ -6,6 +6,7 @@ import { allCountries, clear , sort, sorNumerico, sortContinent, sortActivity} f
 import style from './Home.module.css'
 import Paginacion from "../Paginacion/Paginacion";
 import loading from './logoapp1-01.png'
+import useWindowDimensions from "../Hook/useWindowsDimensions";
 
 function Home() {
     const { countries, allActivity} = useSelector(state=> state)
@@ -27,11 +28,12 @@ function Home() {
 
     //------ Paginacion---
     const [pag, setPag] = useState(1);
-    const [countriesPag ] = useState(10);
+    const { width } = useWindowDimensions();
+    const movil = 480;
+    const [countriesPag ] = useState(width > movil ? 10 : 3);
     let [input,setInput] = useState(1);
     let datos = countries === 'No se encontro el pais' ? '0' : countries;
     const max = Math.ceil(datos?.length ? datos.length/countriesPag : datos.length /countriesPag);
-    console.log(max, datos)
    
     function handleSelectAlfabetico(e){
         e.preventDefault();
