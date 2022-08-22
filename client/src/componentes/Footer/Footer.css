@@ -1,0 +1,20 @@
+.footer{
+    
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* padding-top: 1rem; */
+    background: #dfdbde;
+    height: 5rem;
+}
+.footer-icon-github{
+    width: auto;
+    height: 2.5rem;  
+    padding: 1rem;
+}
+.footer-icon-linkedin{
+    width: auto;
+    height: 2.8rem;  
+    padding: 1rem;
+}

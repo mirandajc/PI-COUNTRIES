@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import style from './Landing.module.css'
 import logo from './logoHome.png'
-import github from './icone-github-noir.png'
-import linkedin from './logo-linkedin-removebg-preview.png'
+// import Footer from "../Footer/Footer";
+// import github from './icone-github-noir.png'
+// import linkedin from './logo-linkedin-removebg-preview.png'
 function Landing() {
     return (
         
@@ -28,20 +29,22 @@ function Landing() {
                     </Link> 
                 </div>
             </div>
-            <div className={style.footer}>
+            {/* <Footer/> */}
+            {/* <div className={style.footer}>
                 <div>
                     <p >Trabajo individual Henry</p>
                 </div>
                 <div>
-                    {/* <Link to='https://github.com/mirandajc'> */}
+                    <Link to='https://github.com/mirandajc'>
                     <a href="https://github.com/mirandajc"><img src={github} className={style.github} alt="" /></a>
                         
-                    {/* </Link> */}
+                    </Link>
                 </div>
                 <div>
                     <a href="https://www.linkedin.com/in/jocelynmiranda/"><img src={linkedin} className={style.linkedin} alt /></a>
                     
-                </div></div>
+                </div>
+            </div> */}
         </div>
     )
 }

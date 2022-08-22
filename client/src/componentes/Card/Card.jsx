@@ -5,7 +5,7 @@ import useWindowDimensions from "../Hook/useWindowsDimensions";
 
 function Card({flags, name, continents, id}) {
     const { width, height } = useWindowDimensions();
-    const movil = 480;
+    const movil = 460;
     if(width > movil){
         return (
             <div className={styles.borde}>

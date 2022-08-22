@@ -7,6 +7,7 @@ import style from './Home.module.css'
 import Paginacion from "../Paginacion/Paginacion";
 import loading from './logoapp1-01.png'
 import useWindowDimensions from "../Hook/useWindowsDimensions";
+import Footer from "../Footer/Footer";
 
 function Home() {
     const { countries, allActivity} = useSelector(state=> state)
@@ -29,7 +30,7 @@ function Home() {
     //------ Paginacion---
     const [pag, setPag] = useState(1);
     const { width } = useWindowDimensions();
-    const movil = 480;
+    const movil = 460;
     const [countriesPag ] = useState(width > movil ? 10 : 3);
     let [input,setInput] = useState(1);
     let datos = countries === 'No se encontro el pais' ? '0' : countries;
@@ -118,7 +119,7 @@ function Home() {
             }
         
             </div>
-            
+            {/* <Footer/> */}
         </div>
     )
 }
