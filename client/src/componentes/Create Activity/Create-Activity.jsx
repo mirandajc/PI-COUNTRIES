@@ -3,9 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { allCountries, createActivity} from '../../Redux/actions'
 import styles from './Create.module.css'
+import useWindowDimensions from "../Hook/useWindowsDimensions";
 // import Navbar from '../NavBar/Navbar'
 import { Link } from "react-router-dom";
+import flecha from "./flecha_atras.png";
+
 function CreateActivity() {
+    const { width } = useWindowDimensions();
+    const movil = 460;
     const [error, setError] = useState('');
     const [mostrarError, setMostrarError] = useState(false)
     const [state, setState] = useState({
@@ -98,10 +103,17 @@ function CreateActivity() {
             {/* <Navbar/> */}
             <header className={styles.header}>
             <Link to='/countries'>
+            {width>movil? 
             <button className={styles.volver}>Volver</button>
+            :
+            <button className={styles.volver}>
+                <img src={flecha} className={styles.button_movil_atras}alt='atras'/>
+            </button>
+            }
             </Link> 
-            <div>Formulario</div></header>
-
+            <div>
+            <p>Crea tu Actividad</p>
+            </div></header>
             <section className={styles.contenedorFormulario} >
             <div className={styles.formulario}>
             <form onSubmit={handleSumit}>

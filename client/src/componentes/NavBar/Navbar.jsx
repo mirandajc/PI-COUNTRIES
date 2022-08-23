@@ -32,8 +32,11 @@ function Navbar({setInput, setPag}) {
             <nav className={style.contenedor}>
                 <div>
                 <Link to='/' >
-                <img  className={style.logo} src={logo}alt="logo"/>
+                <img  className={style.logo} src={logo} alt="logo"/>
                 </Link>
+                </div>
+                <div >
+                <Search setInput={setInput} setPag={setPag}/>
                 </div>
                 <div >
                 <Link to='/activity' className={style.textCreate}>

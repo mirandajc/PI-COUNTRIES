@@ -204,8 +204,14 @@ buttonClose:hover{
       width: auto;
       align-content: flex-start;
       align-items: center;
+      
   }
+.header p{
+    text-align: center;
+    padding: 2rem;
+    font-size: larger;
 
+}
   .volver{
     margin: 1rem;
     /* border: 1px solid;
@@ -218,4 +224,41 @@ buttonClose:hover{
     background-color: white;
     color: #551A8B;
     font-weight: none;
+}
+/* .p{
+    width: 80%;
+    text-align: center;
+} */
+@media  screen and (max-width: 460px) {
+    .formulario{
+        width: auto;
+        flex-direction: column;
+        box-shadow: none;
+        padding: 0;
+    }
+    .name{
+        width: 22rem;
+    }
+    .duration{
+        width: 22rem;
+    }
+    .country{
+        width: 22rem;
+    }
+    .header{
+        background: rgb(64,0,85);
+        display: flex;
+        height: 7rem;
+        justify-content: space-between;
+    }
+    .button_movil_atras{
+        width: 20px;
+        height: auto;
+    }
+    .volver{
+        margin: 1rem;
+        background: none;
+        width: 20%;
+    }
+    
 }

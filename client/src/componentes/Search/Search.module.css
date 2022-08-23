@@ -29,3 +29,37 @@
     display: flex;
     align-items: center;
 }
+
+.contenedor_movil{
+    display: flex;
+    flex-direction: row;
+    width: 220px;
+}
+.input_movil{
+    border: none;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    height: 40px;
+    width: 165px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    margin: none;
+    padding: 10px;
+    /* margin-right: 8px; */
+    text-align: left;
+    /* margin: 10px; */
+    /* padding-left: 1rem;
+    /* padding-left: 1rem; */
+}
+.button_movil{
+    border: none;
+    /* background: url("./lupa.png"); */
+    /* background-repeat: no-repeat; */
+    height: auto;
+    width: 5rem;
+    /* background-size: 31px; */
+    background: none;
+}
+.button_movil_img{
+    width: 26px;
+}
